@@ -25,7 +25,7 @@ class App extends Component {
     return (
       <div>
         <SearchBar onSubmit={this.onSearchSubmit} />
-        <BookList />
+        <BookList bookList={this.state.bookList} />
       </div>
     )
   }
