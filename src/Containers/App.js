@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SearchBar from './SearchBar';
+import BookList from '../Components/BookList'
 import axios from 'axios';
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
     return (
       <div>
         <SearchBar onSubmit={this.onSearchSubmit} />
+        <BookList />
       </div>
     )
   }
