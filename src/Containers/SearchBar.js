@@ -10,16 +10,17 @@ class SearchBar extends Component {
 
   onFormSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target.value)
+    this.props.onSubmit(this.state.term);
   }
 
   render() { 
     return (
       <div className="container">
-        <form>
+        <form onSubmit={this.onFormSubmit}>
           <h5>Book Search</h5>
           <div className="input-field">
-            <input onChange={(e) => this.onFormSubmit(e)} type="text"/>
+            <input onChange={(e) => this.setState({ term: e.target.value.toLowerCase( )})} 
+                   type="text"/>
           </div>
         </form>
       </div>
