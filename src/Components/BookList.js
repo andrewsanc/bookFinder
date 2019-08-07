@@ -4,12 +4,10 @@ import BookCard from './BookCard'
 const renderBookList = (bookList) => {
   return bookList.map(book => {
     return (
-      <BookCard 
+      <BookCard
         key={book.cover_edition_key}
         title={book.title}
         author={book.author_name}
-        publishDate={book.publish_date}
-        editionCount={book.edition_count}
       />
     )
   })
@@ -18,7 +16,9 @@ const renderBookList = (bookList) => {
 const BookList = ({ bookList }) => {
   return (
     <div className="container">
-      {renderBookList(bookList)}
+      <div className="row">
+        {renderBookList(bookList)}
+      </div>
     </div>
   );
 }
