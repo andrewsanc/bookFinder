@@ -1,4 +1,7 @@
-const booksReducer = () => {
+import { combineReducers } from 'redux';
+
+// Book List reducer loaded with dummy data
+const booksListReducer = () => {
   return [
         {  
           "title_suggest":"Can't Hurt Me: Master Your Mind and Defy the Odds",
@@ -187,3 +190,10 @@ const booksReducer = () => {
     }
   ]
 }
+
+
+
+export default combineReducers({
+  // term: searchTermReducer,
+  bookList: booksListReducer 
+})
