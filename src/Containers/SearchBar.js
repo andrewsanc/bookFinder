@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { fetchBooks } from '../actions';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -10,7 +13,7 @@ class SearchBar extends Component {
 
   onFormSubmit = (e) => {
     e.preventDefault();
-    this.props.onSubmit(this.state.term);
+    this.props.fetchBooks(this.state.term);
   }
 
   render() { 
@@ -19,7 +22,7 @@ class SearchBar extends Component {
         <form onSubmit={this.onFormSubmit}>
           <h5>Book Search</h5>
           <div className="input-field">
-            <input onChange={(e) => this.setState({ term: e.target.value.toLowerCase( )})} 
+            <input onChange={(e) => this.setState({ term: e.target.value.toLowerCase()})} 
                    type="text"/>
           </div>
         </form>
@@ -27,5 +30,9 @@ class SearchBar extends Component {
     );
   }
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({ fetchBooks }, dispatch);
+}
  
-export default SearchBar;
+export default connect(null, mapDispatchToProps)(SearchBar);

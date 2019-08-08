@@ -1,11 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import BookCard from './BookCard'
 
 const renderBookList = (bookList) => {
-  return bookList.map(book => {
+  return bookList.map((book, i) => {
     return (
       <BookCard
-        key={book.cover_edition_key}
+        key={i}
         title={book.title}
         author={book.author_name}
       />
@@ -22,5 +23,9 @@ const BookList = ({ bookList }) => {
     </div>
   );
 }
+
+const mapStateToProps = ({ bookList }) => {
+  return { bookList }
+}
  
-export default BookList;
+export default connect(mapStateToProps)(BookList);
