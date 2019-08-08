@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import BookCard from './BookCard'
 
-const renderBookList = (bookList) => {
+const renderBookList = (bookList) => { // Function in charge of rendering our bookList
   return bookList.map((book, i) => {
     return (
       <BookCard
@@ -14,7 +14,7 @@ const renderBookList = (bookList) => {
   })
 }
 
-const BookList = ({ bookList }) => {
+const BookList = ({ bookList }) => {  // bookList component
   return (
     <div className="container" style={{ overflow: 'auto', height: '975px' }}>
       <div className="row">
@@ -24,7 +24,7 @@ const BookList = ({ bookList }) => {
   );
 }
 
-const mapStateToProps = ({ bookList }) => {
+const mapStateToProps = ({ bookList }) => { // Retrieving data from our store
   return { bookList }
 }
  
