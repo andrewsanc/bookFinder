@@ -16,7 +16,7 @@ const renderBookList = (bookList) => {
 
 const BookList = ({ bookList }) => {
   return (
-    <div className="container">
+    <div className="container" style={{ overflow: 'auto', height: '975px' }}>
       <div className="row">
         {renderBookList(bookList)}
       </div>
