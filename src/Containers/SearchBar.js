@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { fetchBooks } from '../actions';
 
-class SearchBar extends Component {
+class SearchBar extends Component { // Component in charge of rendering our SearchBar
   constructor(props) {
     super(props);
     this.state = {
@@ -31,7 +31,7 @@ class SearchBar extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => { // Brings in our fetchBooks action
   return bindActionCreators({ fetchBooks }, dispatch);
 }
  

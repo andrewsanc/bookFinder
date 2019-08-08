@@ -10,7 +10,7 @@ const style = {
   backgroundSize: 'cover'
 }
 
-const App = () => {
+const App = () => { // Functional component in charge of rendering our application
   return (
     <div style={style}>
       <SearchBar />
